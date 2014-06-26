@@ -49,43 +49,41 @@ video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
 ## Getting Started (Installing and following-along)
 
 1. Clone this repo.
-```bash
-prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
-Cloning into 'ansible_tutorial'...
-remote: Reusing existing pack: 112, done.
-remote: Total 112 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (48/48), done.
-Checking connectivity... done.
-```
+
+    ```bash
+    prompt> git clone https://github.com/glenjarvis/ansible_tutorial.git
+    Cloning into 'ansible_tutorial'...
+    remote: Reusing existing pack: 112, done.
+    remote: Total 112 (delta 0), reused 0 (delta 0)
+    Receiving objects: 100% (112/112), 37.58 KiB | 0 bytes/s, done.
+    Resolving deltas: 100% (48/48), done.
+    Checking connectivity... done.
+    ```
+
 2. Change to the src directory.
-```bash
-prompt> cd ansible_tutorial
-```
+
+    ```bash
+    prompt> cd ansible_tutorial
+    ```
+
 3. Configure the repo for your account and settings
-```bash
-prompt> ( cd src; python configure.py )
-This script creates configuration files for using Ansible to
-configure a newly-created virtual machine.
-It has been tested by the author on an AWS free tier VM.
-This has the best chance of working on an AWS free tier VM, or
-failing that, on a VM with a recent version of CentOS.
 
-    No configuration file found. Let me ask questions so that we can configure.
+    ```bash
+    prompt> ( cd src; python configure.py )
 
-What is the path to your .pem key for ssh access to the virtual machine?
---> example_key.pem
+        No configuration file found. Let me ask questions so that we can configure.
 
-What user to use to ssh to the remote system [ec2-user]?
--->
+    What is the path to your Amazon pem key?
+    --> example_key.pem
 
-Configuring `ansible_hosts` file ./ansible_hosts...
+    Configuring `ansible_hosts` file ./ansible_hosts...
 
-What is the IP address of the virtual machine?
---> demo.example.com
+    What is the IP address of the Amazon Linux free tier machine?
+    --> demo.example.com
 
-Configuration is complete.
-```
+    Configuration is complete.
+    ```
+
 4. Follow the examples (starting with the `example_01` subdirectory).
 
 ## Examples
@@ -93,24 +91,24 @@ Configuration is complete.
 Here is a list of the examples just in case there's any confusion in which
 order the examples should be executed:
 
-0. `( cd src; python configure.py )` (see instructions above)
-1. `( cd src/example_01; python access_machine.py )`
-2. `( cd src/example_02; python auto_update_machine.py )`
-3. `( cd src/example_03; less README.txt )` (Read the `README.txt` file; it's not really meant to be executed)
-4. `( cd src/example_04; ansible -m 'ping' webservers` )
-5. `( cd src/example_05; ansible webservers -a 'sudo yum update -y' )`
-6. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml )`
-7. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml )`
-8. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml )`
-9. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml )`
-10. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml )`
-11. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml )`
-12. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml )`
-13. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml )`
-14. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml )`
-15. `( cd src/playbook_examples; less pedantically_commented_playbook )` (Read but don't execute: `pedantically_commented_playbook.yml`)
-16. `( cd src/role_examples; ansible-playbook demo_play_role_01.yml )`
-17. `( cd src/role_examples; ansible-playbook demo_play_role_02.yml )`
+1. `( cd src; python configure.py )` (see instructions above)
+2. `( cd src/example_01; python access_machine.py )`
+3. `( cd src/example_02; python auto_update_machine.py )`
+4. `( cd src/example_03; less README.txt )` (Read the `README.txt` file; it's not really meant to be executed)
+5. `( cd src/example_04; ansible webservers -m 'ping' )`
+6. `( cd src/example_05; ansible webservers -a 'sudo yum update -y' )`
+7. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_01.yml )`
+8. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_02.yml )`
+9. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_03.yml )`
+10. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_04.yml )`
+11. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_05.yml )`
+12. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_06.yml )`
+13. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_07.yml )`
+14. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_08.yml )`
+15. `( cd src/playbook_examples; ansible-playbook demo_playbook_iter_09.yml )`
+16. `( cd src/playbook_examples; less pedantically_commented_playbook )` (Read but don't execute: `pedantically_commented_playbook.yml`)
+17. `( cd src/role_examples; ansible-playbook demo_play_role_01.yml )`
+18. `( cd src/role_examples; ansible-playbook demo_play_role_02.yml )`
 19. `( cd src/role_examples; ansible-playbook demo_play_role_03.yml )`
 20. Exploration: Log into machine; `sudo su - webuser; cd /home/webuser/sample_project; python manage.py runserver`
 

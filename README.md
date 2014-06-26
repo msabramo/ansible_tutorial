@@ -46,6 +46,23 @@ Instance](http://aws.amazon.com/), I highly recommend [watching this
 video](https://www.youtube.com/watch?v=xZb3cr1JrMg) in advance of the talk.
 
 
+## Prerequsistes
+
+The examples here were developed and tested with an Amazon EC2 free tier
+instance.
+
+You want to have such an instance and you should know:
+
+- where your `.pem` key (for SSH) is on your local filesystem
+  (`~/.ssh` is a typical place to keep these)
+- the IP address of the instance
+
+You can create these free tier machines by using the AWS Management
+Console:
+
+https://console.aws.amazon.com/
+
+
 ## Getting Started (Installing and following-along)
 
 1. Clone this repo.
